@@ -119,6 +119,11 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
      }  
     }
     
+    if($nom != ""){
+        if (!estLettres($nom)){
+            ajouterErreur("Le nom de l'établissement ne peut contenir des caractères spéciaux");
+        }
+    }
  
     
     if ($tel != ""){
