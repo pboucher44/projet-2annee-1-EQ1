@@ -115,13 +115,28 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
             }
         }
     }
+    
+    if ($tel != ""){
+        //Si le numéro n'est pas des chiffres
+        //une erreur est générée
+        if (!estEntier($tel)){
+            ajouterErreur("Le numéro de téléphone doit être que des chiffres");
+        }else{
+            
+            
+        }
+            
+    }
+    
     if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("L'établissement $nom existe déjà");
     }
     if ($codePostal != "" && !estUnCp($codePostal)) {
         ajouterErreur('Le code postal doit comporter 5 chiffres');
     }
+    
 }
+
 
 function verifierDonneesEtabM($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable) {
     if ($nom == "" || $adresseRue == "" || $codePostal == "" || $ville == "" ||
@@ -140,3 +155,5 @@ function estUnCp($codePostal) {
     // Le code postal doit comporter 5 chiffres
     return strlen($codePostal) == 5 && estEntier($codePostal);
 }
+
+
