@@ -109,8 +109,8 @@ echo '
       </tr>
       <tr class="ligneTabNonQuad">
          <td> Téléphone*: </td>
-         <td><input type="text" value="' . $tel . '" name="tel" size ="20" 
-         maxlength="10"></td>
+         <td><input type="tel" value="' . $tel . '" name="tel" size ="20" 
+         maxlength="10" placeholder="0XXXXXXXXX"></td>
       </tr>
       <tr class="ligneTabNonQuad">
          <td> E-mail: </td>

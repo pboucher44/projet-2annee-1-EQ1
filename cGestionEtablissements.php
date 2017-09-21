@@ -65,7 +65,7 @@ switch ($action) {
         $prenomResponsable = $_REQUEST['prenomResponsable'];
 
         if ($action == 'validerCreerEtab') {
-            verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable);
+            verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $prenomResponsable);
             if (nbErreurs() == 0) {
                 $unEtab = new Etablissement($id, $nom, $adresseRue, $codePostal, $ville, $tel, $adresseElectronique, $type, $civiliteResponsable, $nomResponsable, $prenomResponsable);
                 EtablissementDAO::insert($unEtab);
@@ -89,9 +89,9 @@ switch ($action) {
 // Fermeture de la connexion au serveur MySql
 Bdd::deconnecter();
 
-function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable) {
+function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $prenomResponsable) {
     if ($id == "" || $nom == "" || $adresseRue == "" || $codePostal == "" ||
-            $ville == "" || $tel == "" || $nomResponsable == "") {
+            $ville == "" || $tel == "" || $nomResponsable == "" || $prenomResponsable == "") {
         ajouterErreur('Chaque champ suivi du caractère * est obligatoire');
     }
     if ($id != "") {
@@ -107,6 +107,20 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
         }
     }
     
+    if($nomResponsable != ""){
+     if (!estLettres($nomResponsable)) {
+         ajouterErreur("Le nom du responsable ne peut avoir de caractères spéciaux");
+     }  
+    }
+    
+    if($prenomResponsable != ""){
+     if (!estLettres($prenomResponsable)) {
+         ajouterErreur("Le prenom du responsable ne peut avoir de caractères spéciaux");
+     }  
+    }
+    
+ 
+    
     if ($tel != ""){
         //Si le numéro n'est pas des chiffres
         //une erreur est générée
@@ -118,6 +132,8 @@ function verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel,
         }
             
     }
+    
+    
     
     if ($nom != "" && EtablissementDAO::isAnExistingName(true, $id, $nom)) {
         ajouterErreur("L'établissement $nom existe déjà");
