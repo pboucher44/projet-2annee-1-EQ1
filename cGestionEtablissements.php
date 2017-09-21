@@ -61,9 +61,10 @@ switch ($action) {
         $adresseElectronique = $_REQUEST['adresseElectronique'];
         $type = $_REQUEST['type'];
         $civiliteResponsable = $_REQUEST['civiliteResponsable'];
-        $nomResponsable = $_REQUEST['nomResponsable'];
+        $nomResponsable = strtoupper($_REQUEST['nomResponsable']);
         $prenomResponsable = $_REQUEST['prenomResponsable'];
 
+        
         if ($action == 'validerCreerEtab') {
             verifierDonneesEtabC($id, $nom, $adresseRue, $codePostal, $ville, $tel, $nomResponsable, $prenomResponsable,$adresseElectronique);
             if (nbErreurs() == 0) {
