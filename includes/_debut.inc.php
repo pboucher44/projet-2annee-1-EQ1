@@ -6,18 +6,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="css/cssGeneral.css" rel="stylesheet" type="text/css">
         <link href="css/cssOnglets.css" rel="stylesheet" type="text/css">
+        <center><img id="logo" src="images/logo.png"></center>
     </head>
     <body class='basePage'>
-        <div style="text-align:right;">v. 2017</div>
+        <br>
         <!--  Tableau contenant le titre et les menus -->
         <table width="100%" cellpadding="0" cellspacing="0">
             <!-- Titre -->
-            <tr> 
-                <td class="titre">Festival Folklores du Monde <br>
-                    <span id="texteNiveau2" class="texteNiveau2">
-                        H&eacute;bergement des groupes</span><br>&nbsp;
-                </td>
-            </tr>
+            
             <!-- Menus -->
             <tr> 
                 <td>

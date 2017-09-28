@@ -1,34 +1,32 @@
 /* FEUILLE DE STYLES POUR TOUS LES STYLES DE L'APPLICATION SAUF LES MENUS */
 
 /* Style de base pour la page (couleur fond : vert pâle, couleur texte : noir) */
-.basePage 
+
+#logo{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+body 
 {
-   background-color:#DDFF88;
+   background-image: url('../images/background.jpg'); 
    color:black;
    font:11px Arial, Helvetica, sans-serif;
 }
 
-/* Style pour le titre (couleur du texte : rouge) */
-.titre 
-{
-   background-color:#6A6E60;
-   color:#F50033;
-   font:30px Arial, Helvetica, sans-serif;
-   text-align:center;
+.basePage{
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-/* Style pour le texte de 2ème niveau du titre */
-.texteNiveau2
-{
-   font:20px Arial, Helvetica, sans-serif;
-}
 
 /* Style pour le texte associé à l'onglet Accueil (couleur : bleu foncé avec 
 mise en gras et en italique) */
 .texteAccueil
 {
-   background-color:#DDFF88;
-   color:#000099;       
+   
+   color:black;       
    font:14px Georgia, "Times New Roman", Times, serif;
    font-weight:bold;
    font-style:italic;
@@ -60,7 +58,7 @@ tr.enTeteTabQuad
 {
    background-image:url('../images/xpBarre.jpg');
    background-color:#FFFFC0;
-   color:black;
+   color:white;
    height:21px;
    text-align:center;
 } 
@@ -101,7 +99,7 @@ tr.enTeteTabNonQuad td
 {
    background-image:url('../images/xpBarre.jpg');
    background-color:#FFFFC0;
-   color:black;
+   color:white;
    height:21px;
    text-align:center;
    border-bottom:1px solid #777777;
