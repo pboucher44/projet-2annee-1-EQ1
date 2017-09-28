@@ -25,15 +25,16 @@
                     menus traditionnels, il faudra inclure le fichier adéquat -->
                     <?php include("_onglets.inc.php"); ?>
 
-                    <div id='barreMenus'>
-                        <ul class='menus'>
-                            <?php construireMenu("Accueil", "index.php", 1); ?>
-                            <?php construireMenu("Gestion établissements", "cGestionEtablissements.php", 2); ?>
-                            <?php construireMenu("Gestion types chambres", "cGestionTypesChambres.php", 3); ?>
-                            <?php construireMenu("Offre hébergement", "cOffreHebergement.php", 4); ?>
-                            <?php construireMenu("Attribution chambres", "cAttributionChambres.php", 5); ?>
+                    
+                        <ul id="menu">
+                            <li id="sousmenu"><?php construireMenu("Accueil", "index.php", 1); ?></li>
+                            <li id="sousmenu"><?php construireMenu("Gestion établissements", "cGestionEtablissements.php", 2); ?></li>
+                            <li id="sousmenu"><?php construireMenu("Gestion types chambres", "cGestionTypesChambres.php", 3); ?></li>
+                            <li id="sousmenu"><?php construireMenu("Offre hébergement", "cOffreHebergement.php", 4); ?></li>
+                            <li id="sousmenu"><?php construireMenu("Attribution chambres", "cAttributionChambres.php", 5); ?></li>
+                            
                         </ul>
-                    </div>
+                    
 
                 </td>
             </tr>
