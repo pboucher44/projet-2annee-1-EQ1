@@ -28,7 +28,7 @@
                             <li id="sousmenu"><?php construireMenu("Gestion types chambres", "cGestionTypesChambres.php", 3); ?></li>
                             <li id="sousmenu"><?php construireMenu("Offre hébergement", "cOffreHebergement.php", 4); ?></li>
                             <li id="sousmenu"><?php construireMenu("Attribution chambres", "cAttributionChambres.php", 5); ?></li>
-                            
+                            <li id="sousmenu"><?php construireMenu("Gestion Groupes", "cGestionGroupes.php", 5); ?></li>
                         </ul>
                     
 

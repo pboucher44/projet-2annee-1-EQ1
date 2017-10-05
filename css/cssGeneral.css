@@ -10,6 +10,7 @@
 body 
 {
    background-image: url('../images/background.jpg'); 
+   background-attachment: fixed;
    color:black;
    font:11px Arial, Helvetica, sans-serif;
 }
