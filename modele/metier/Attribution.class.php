@@ -21,7 +21,7 @@ class Attribution {
      * @var integer
      */
     private $nbChambres;
- 
+     
     function __construct(Offre $offre, Groupe $groupe, $nbChambres) {
         $this->offre = $offre;
         $this->groupe = $groupe;

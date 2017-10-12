@@ -1,12 +1,8 @@
 <?php
 namespace modele\metier;
 
-/**
- * Description of Etablissement
- * un établissement a des capacités d'hébergement à offrir au festival
- * @author prof
- */
-class Etablissement {
+
+class Lieu {
     /**
      * code  
      * @var string
@@ -34,8 +30,12 @@ class Etablissement {
         $this->adresse = $adresse;
         $this->capaciteAccueil = $capaciteAccueil;
     }
+    
+    public function __toString() {
+        
+    }
 
-    function getId() {
+        function getId() {
         return $this->id;
     }
 
