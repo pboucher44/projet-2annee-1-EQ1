@@ -56,7 +56,9 @@ class RepresentationDAO {
      */
     public static function getAll() {
         $lesObjets = array();
-        $requete = "SELECT * FROM Representation ORDER BY date";
+        $requete = "SELECT  r.id,date, l.nom AS Lieu, g.nom AS Groupe, heuredebut, heurefin FROM Representation r
+INNER JOIN Groupe g ON r.Groupe = g.id
+INNER JOIN Lieu l ON r.Lieu = l.id ORDER BY date";
         $stmt = Bdd::getPdo()->prepare($requete);
         $ok = $stmt->execute();
         if ($ok) {
