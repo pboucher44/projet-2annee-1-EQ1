@@ -4,35 +4,53 @@ use modele\dao\Bdd;
 require_once __DIR__ . '/../../includes/autoload.php';
 Bdd::connecter();
 
-include("/../../includes/_debut.inc.php");
+include("includes/_debut.inc.php");
 
 // CONSULTER LES OFFRES DE TOUS LES ÉTABLISSEMENTS
 // IL FAUT QU'IL Y AIT AU MOINS UN ÉTABLISSEMENT ET UN TYPE CHAMBRE POUR QUE 
 // L'AFFICHAGE SOIT EFFECTUÉ
 $lesRepresentation = RepresentationDAO::getAll();
+$dateprec = -1;
+$x=-1;
 
-if ($nbEtab != 0 && $nbTypesChambres != 0) {
-    // POUR CHAQUE ÉTABLISSEMENT : AFFICHAGE DU NOM ET D'UN TABLEAU COMPORTANT 1
-    // LIGNE D'EN-TÊTE ET 1 LIGNE PAR TYPE DE CHAMBRE
-
-    // BOUCLE SUR LES ÉTABLISSEMENTS
     foreach ($lesRepresentation as $uneRepresentation) {
         $date = $uneRepresentation->getDate();
 
         // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
-        echo "<strong>$date</strong><br>
+        if($x==-1){
+            $dateprec=$date;
+            $x=$x+1;
+            echo "<strong>$date</strong><br>
    
-      <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            echo "
+            <tr class='enTeteTabQuad'>
+               <td width='30%'>Lieu</td>
+               <td width='30%'>Groupe</td>
+               <td width='20%'>Heure Début</td> 
+               <td width='20%'>Heure Fin</td>
+            </tr>";
+        }
+        
+        if($dateprec!=$date){
+            $dateprec=$date;
+            echo "</table><br>";
+            echo "<strong>$date</strong><br>
+            
+            <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
+            echo "
+            <tr class='enTeteTabQuad'>
+               <td width='30%'>Lieu</td>
+               <td width='30%'>Groupe</td>
+               <td width='20%'>Heure Début</td> 
+               <td width='20%'>Heure Fin</td>
+            </tr>";
+        }
+        
 
         // AFFICHAGE DE LA LIGNE D'EN-TÊTE
-        echo "
-         <tr class='enTeteTabQuad'>
-            <td width='30%'>Lieu</td>
-            <td width='30%'>Groupe</td>
-            <td width='20%'>Heure Début</td> 
-            <td width='20%'>Heure Fin</td>
-         </tr>";
+        
 
             echo " 
             <tr class='ligneTabQuad'>
@@ -50,8 +68,8 @@ if ($nbEtab != 0 && $nbTypesChambres != 0) {
         }
         echo "
       </table><br>";
-    }
+    
 
 
-include("/../../includes/_fin.inc.php");
+include("includes/_fin.inc.php");
 
