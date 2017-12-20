@@ -16,9 +16,9 @@ use \PDOException;
  * DSN MYSQL
  */
 define('HOTE', 'localhost');    // url du serveur de bases de données
-define('BD', 'festival');       // nom de la base de données
-define('LOGIN', 'festival');    // login d'un utilisateur de MySql avec des droits sur la BDD
-define('MDP', 'secret');        // mot de passe de cet utilisateur
+define('BD', 'wtenaud_festival');       // nom de la base de données
+define('LOGIN', 'wtenaud_festival');    // login d'un utilisateur de MySql avec des droits sur la BDD
+define('MDP', 'Kaxlot26');        // mot de passe de cet utilisateur
 define('DSN', "mysql:host=" . HOTE . ";dbname=" . BD); // construction de la chaîne de connexion utilisée par PDO
 /**
  * DSN ORACLE XE

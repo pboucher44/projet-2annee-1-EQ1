@@ -27,6 +27,7 @@ switch ($action) {
     case 'initial' :
         include("vues/GestionGroupes/vObtenirGroupes.php");
         break;
+    
 }
 
 // Fermeture de la connexion au serveur MySql

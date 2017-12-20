@@ -2,6 +2,7 @@
 /**
  * Contrôleur : gestion des établissements
  */
+
 use modele\dao\EtablissementDAO;
 use modele\metier\Etablissement;
 use modele\dao\Bdd;

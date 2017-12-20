@@ -1,11 +1,8 @@
 <?php
-
 namespace modele\dao;
-
 use modele\metier\Representation;
 use PDOStatement;
 use PDO;
-
 /**
  * Description of EtablissementDAO
  * Classe métier : Etablissement
@@ -13,7 +10,6 @@ use PDO;
  * @version 2017
  */
 class RepresentationDAO {
-
     /**
      * Instancier un objet de la classe Etablissement à partir d'un enregistrement de la table ETABLISSEMENT
      * @param array $enreg
@@ -27,12 +23,9 @@ class RepresentationDAO {
         $groupe = $enreg['GROUPE'];
         $heure_debut = $enreg['HEUREDEBUT'];
         $heure_fin = $enreg['HEUREFIN'];
-
         $uneRepres = new Representation($id,$date, $lieu, $groupe, $heure_debut, $heure_fin);
-
         return $uneRepres;
     }
-
     /**
      * Valorise les paramètres d'une requête préparée avec l'état d'un objet Etablissement
      * @param type $objetMetier un Etablissement
@@ -49,7 +42,6 @@ class RepresentationDAO {
         $stmt->bindValue(':heure_debut', $objetMetier->getHeure_debut());
         $stmt->bindValue(':heure_fin', $objetMetier->getHeure_fin());
     }
-
     /**
      * Retourne la liste de tous les Etablissements
      * @return array tableau d'objets de type Etablissement
@@ -70,5 +62,4 @@ INNER JOIN Lieu l ON r.Lieu = l.id ORDER BY date";
         }
         return $lesObjets;
     }
-
 }

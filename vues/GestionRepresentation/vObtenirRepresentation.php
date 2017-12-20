@@ -4,7 +4,11 @@ use modele\dao\Bdd;
 require_once __DIR__ . '/../../includes/autoload.php';
 Bdd::connecter();
 
+
 include("includes/_debut.inc.php");
+include ('verif.php') ;
+echo "Bienvenue " ,$_SESSION['pseudo'];
+
 
 // CONSULTER LES OFFRES DE TOUS LES ÉTABLISSEMENTS
 // IL FAUT QU'IL Y AIT AU MOINS UN ÉTABLISSEMENT ET UN TYPE CHAMBRE POUR QUE 
@@ -21,7 +25,7 @@ $x=-1;
         if($x==-1){
             $dateprec=$date;
             $x=$x+1;
-            echo "<strong>$date</strong><br>
+            echo "<br><strong>$date</strong><br>
    
             <table width='45%' cellspacing='0' cellpadding='0' class='tabQuadrille'>";
             echo "

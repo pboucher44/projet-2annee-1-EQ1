@@ -20,8 +20,9 @@
                     <!-- On inclut le fichier de gestion des onglets ; si on a des 
                     menus traditionnels, il faudra inclure le fichier adéquat -->
                     <?php include("_onglets.inc.php"); ?>
-
                     
+                        <!--<label for="pseudo">Pseudo :</label><input name="pseudo" type="text" id="pseudo" /><br />
+                        <label for="password">Mot de Passe :</label><input type="password" name="password" id="password" />-->
                         <ul id="menu">
                             <li id="sousmenu"><?php construireMenu("Accueil", "index.php", 1); ?></li>
                             <li id="sousmenu"><?php construireMenu("Gestion établissements", "cGestionEtablissements.php", 2); ?></li>
@@ -30,6 +31,7 @@
                             <li id="sousmenu"><?php construireMenu("Attribution chambres", "cAttributionChambres.php", 5); ?></li>
                             <li id="sousmenu"><?php construireMenu("Gestion Groupes", "cGestionGroupes.php", 5); ?></li>
                             <li id="sousmenu"><?php construireMenu("Gestion Representation", "cGestionRepresentation.php", 5); ?></li>
+                            <li id="sousmenu"><?php construireMenu("Connexion/Deconnexion", "cConnexion.php",5); ?></li> 
                         </ul>
                     
 

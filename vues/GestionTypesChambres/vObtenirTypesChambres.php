@@ -5,6 +5,8 @@ use modele\dao\Bdd;
 require_once __DIR__ . '/../../includes/autoload.php';
 
 include("includes/_debut.inc.php");
+include ('verif.php') ;
+echo "Bienvenue " ,$_SESSION['pseudo'];
 
 // AFFICHER L'ENSEMBLE DES TYPES DE CHAMBRES 
 // CETTE PAGE CONTIENT UN TABLEAU CONSTITUÉ D'1 LIGNE D'EN-TÊTE ET D'1 LIGNE PAR 

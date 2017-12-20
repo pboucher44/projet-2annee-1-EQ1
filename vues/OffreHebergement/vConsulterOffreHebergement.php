@@ -7,6 +7,8 @@ require_once __DIR__ . '/../../includes/autoload.php';
 Bdd::connecter();
 
 include("includes/_debut.inc.php");
+include ('verif.php') ;
+echo "Bienvenue " ,$_SESSION['pseudo'];
 
 // CONSULTER LES OFFRES DE TOUS LES ÉTABLISSEMENTS
 // IL FAUT QU'IL Y AIT AU MOINS UN ÉTABLISSEMENT ET UN TYPE CHAMBRE POUR QUE 
@@ -27,7 +29,7 @@ if ($nbEtab != 0 && $nbTypesChambres != 0) {
 
         // AFFICHAGE DU NOM DE L'ÉTABLISSEMENT ET D'UN LIEN VERS LE FORMULAIRE DE
         // MODIFICATION
-        echo "<strong>$nom</strong><br>
+        echo "<br><strong>$nom</strong><br>
       <a href='cOffreHebergement.php?action=demanderModifierOffre&idEtab=$idEtab'>
       Modifier</a>
    

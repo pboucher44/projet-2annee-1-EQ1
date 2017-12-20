@@ -10,6 +10,8 @@ require_once __DIR__ . '/../../includes/autoload.php';
 Bdd::connecter();
 
 include("includes/_debut.inc.php");
+include ('verif.php') ;
+echo "Bienvenue " ,$_SESSION['pseudo'];
 
 // CONSULTER LES ATTRIBUTIONS DE TOUS LES ÉTABLISSEMENTS
 // IL FAUT QU'IL Y AIT AU MOINS UN ÉTABLISSEMENT OFFRANT DES CHAMBRES POUR QUE 
